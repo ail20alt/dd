@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Column Table with Auto-Save</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 3px solid #f5f0f0;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f80a0a;
+        }
+    </style>
+</head>
+<body>
+
+<h2>تسجيل بيانات</h2>
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>الاسم</th>
+            <th>تم تسديد</th>
+            <th>المتبقي</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+        </tr>
+        <tr>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+        </tr>
+        <tr>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+            <td contenteditable="true"></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    const table = document.getElementById('data-table');
+    
+    // Load saved data from local storage
+    window.onload = function() {
+        const savedData = JSON.parse(localStorage.getItem('tableData'));
+        if (savedData) {
+            for (let i = 0; i < savedData.length; i++) {
+                const row = table.rows[i + 1];
+                for (let j = 0; j < savedData[i].length; j++) {
+                    row.cells[j].innerText = savedData[i][j];
+                }
+            }
+        }
+    };
+
+    // Save data to local storage on input
+    table.addEventListener('input', function() {
+        const data = [];
+        for (let i = 0; i < table.rows.length - 1; i++) {
+            const row = [];
+            for (let j = 0; j < table.rows[i + 1].cells.length; j++) {
+                row.push(table.rows[i + 1].cells[j].innerText);
+            }
+            data.push(row);
+        }
+        localStorage.setItem('tableData', JSON.stringify(data));
+    });
+</script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <html>
+    <head>
+    <title>آلة حاسبة بلغة اتش تي ام ال</title>
+    </head>
+    <body bgcolor= "#000000" text= "gold">
+    <form name="calculator" >
+    <p align="center">
+    <input type="button" value="1" onClick="document.calculator.ans.value+='1'">
+    <input type="button" value="2" onClick="document.calculator.ans.value+='2'">
+    <input type="button" value="3" onClick="document.calculator.ans.value+='3'">
+    <input type="button" value="4" onClick="document.calculator.ans.value+='4'">
+    <input type="button" value="5" onClick="document.calculator.ans.value+='5'">
+    <input type="button" value="6" onClick="document.calculator.ans.value+='6'">
+    <input type="button" value="7" onClick="document.calculator.ans.value+='7'">
+    <input type="button" value="8" onClick="document.calculator.ans.value+='8'">
+    <input type="button" value="9" onClick="document.calculator.ans.value+='9'">
+    <input type="button" value="-" onClick="document.calculator.ans.value+='-'">
+    <input type="button" value="+" onClick="document.calculator.ans.value+='+'">
+    <input type="button" value="*" onClick="document.calculator.ans.value+='*'">
+    <input type="button" value="/" onClick="document.calculator.ans.value+='/'">
+    <input type="button" value="0" onClick="document.calculator.ans.value+='0'">
+    <input type="reset" value="إعادة الضبط">
+    <input type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)">
+    <br>الحل هو <input type="textfield" name="ans" value="">
+    </p>
+    </form>
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+     
+     
+    </body>
+    </html>
+
+    
